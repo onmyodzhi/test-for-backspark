@@ -1,0 +1,24 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  liquibase:
+    change-log: ${CHANGELOG_PATH}
+
+  datasource:
+    driver-class-name: ${PROD_DATASOURCE_DRIVER_CLASS_NAME}
+    url: ${PROD_DATASOURCE_URL}
+    username: ${PROD_DATASOURCE_USERNAME}
+    password: ${PROD_DATASOURCE_PASSWORD}
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: ${PROD_HIBERNATE_DDL_AUTO}
+    properties:
+      hibernate:
+        format_sql: false
